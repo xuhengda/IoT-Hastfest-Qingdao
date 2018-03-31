@@ -71,11 +71,11 @@ Wingtip Toys 希望借助物联网解决方或产品案帮助他们更了解来�
 
 ## 用户背景
 
-在成功完成试点项目以后，Wingtip Toys 的IT人员开始了将智能旋转门部署到公园入口。然而，随着云霄飞车在运行过程中多次出现小问题随之成为了人们关注的焦点。据报道，出现了各种异常现象，如照片设备数据故障和列车本身故障。游乐场的管理层认为过山车的口碑对公园至关重要，所以现要求组织所有技术资源都必须收集云霄飞车的数据随后进行分析问题来源。
+在成功完成试点项目以后，Wingtip Toys 的IT人员开始了将智能旋转门部署到公园入口。然而，随着云霄飞车在运行过程中多次出现小问题随之成为了人们关注的焦点。据报道，出现了各种异常现象，如照片设备数据故障和列车本身故障。游乐场的管理层认为过山车的口碑对公园至关重要，所以现要求组织所有技术资源都必须收集云霄飞车的数据随后进行分析问题来源。
 
 云霄飞车上已经部署过一些传感器设备可以收集到收集大量数据其中包括，包括速度、加速度、乘客数量以及每次运行的其他关键事件数据。因为目前生成的数据保存在列车本地,Wingtip Toys 想调查使用 IoT Hub 来将数据上传到云端进行处理数据和管理分析。在云霄飞车上总共有五列火车。
 
-为了尽可能快地部署一个试点项目，管理层希望将 Azure IoT Hub 作为一个概念的证明，只在一列火车上使用。请您的团队成员用代码模拟五列车的数据然后配置IoT Hub连接字符串，然后将这些列车发送到云端 Azure IoT hub。
+为了尽可能快地部署一个试点项目，管理层希望将 Azure IoT Hub 作为一个概念的证明，只在一列火车上使用。请您的团队成员用代码模拟五列车的数据然后配置IoT Hub连接字符串，然后将这些列车发送到云端 Azure IoT hub。
 
 因为 Wingtip Toys 不确定他们以后要分析的数据，所以他们已经要求存储设备产生的所有数据。另外该公司也意识到，能够实时的处理数据也是非常关键的，所以他们还希望部署一个流处理引擎来处理接收到的数据并使用可视化工具展示出数据。
 
@@ -85,7 +85,7 @@ Wingtip Toys 希望借助物联网解决方或产品案帮助他们更了解来�
 
 - 所上传的数据格式需要符合JSON格式标准
 
-- 云霄飞车所产生的数据必须包括三个传感器 GPS，加速器，事件捕捉器
+- 云霄飞车所产生的数据必须包括三个传感器 GPS，加速器，事件捕捉器
 
 - GPS data
 
@@ -131,7 +131,7 @@ Wingtip Toys 希望借助物联网解决方或产品案帮助他们更了解来�
 }
 ```
 
-- 解决方案中数据到达缓冲器中以后必须要在两个小时以内到达存储器内。
+- 解决方案中数据到达缓冲器中以后必须要在两个小时以内到达存储器内。
 - 数据展示需要在一个可视化页面中展示并且数据展示的时间延迟不能大于5分钟。
 
 ## 成功标准
@@ -159,7 +159,7 @@ Wingtip Toys 希望借助物联网解决方或产品案帮助他们更了解来�
   - 您的可视化报告必须符合以下条件：
     - 处理输入的实时数据流，而不是blob存储中提供的静态测试数据。
     - 在处理数据时，解释迟到和无序事件的原因 — 为迟到的事件假设一个5分钟的窗口。
-    - 对于每一个云霄飞车，用5分钟为单位显示发车的次数和乘坐的人数。
+    - 对于每一个云霄飞车，用5分钟为单位显示发车的次数和乘坐的人数。
     - 可视化报告必须基于消息内的时间戳计算，而不是消息到IoT Hub的时间。
 
   - 您的团队需要成功演示流处理作业，该作业将查询结果发送到团队所选择的持久性存储。输出必须包含以下信息:
@@ -217,7 +217,7 @@ Wingtip Toys 希望借助物联网解决方或产品案帮助他们更了解来�
 
 - 理解如何 [监视 Azure IoT 中心的运行状况并快速诊断问题](https://docs.microsoft.com/zh-cn/azure/iot-hub/iot-hub-monitor-resource-health).
 
-- 理解 Azure 中的 - [HDInsight](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-overview) 和 [Azure Databricks](https://docs.azuredatabricks.net)
+- 理解 Azure 中的 - [HDInsight](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-overview) 和 [Azure Databricks](https://docs.azuredatabricks.net)
 
 - 常见问题 [PySpark SQL Functions](http://spark.apache.org/docs/latest/api/python/pyspark.sql.html) & [Scala Spark SQL Column Functions](http://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.sql.Column)
 
@@ -225,7 +225,7 @@ Wingtip Toys 希望借助物联网解决方或产品案帮助他们更了解来�
 
 - Scala 介绍 [Tour of Scala](http://docs.scala-lang.org/tour/tour-of-scala.html)
 
-- 理解如何加载外部程序集在 [HDInsight](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-jupyter-notebook-use-external-packages) 和 [Azure Databricks](https://docs.azuredatabricks.net/user-guide/libraries.html)
+- 理解如何加载外部程序集在 [HDInsight](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-jupyter-notebook-use-external-packages) 和 [Azure Databricks](https://docs.azuredatabricks.net/user-guide/libraries.html)
 
 - [Why Would I Ever Need to Partition My Big ‘Raw’ Data?](https://www.red-gate.com/simple-talk/cloud/cloud-data/ever-need-partition-big-raw-data/)
 
