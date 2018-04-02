@@ -203,7 +203,7 @@ Contoso 公司希望借助物联网解决方或产品案帮助他们更了解来
 
 - 理解如何 [监视 Azure IoT 中心的运行状况并快速诊断问题](https://docs.microsoft.com/zh-cn/azure/iot-hub/iot-hub-monitor-resource-health).
 
-- 理解 Azure 中的 - [HDInsight](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-overview) 和 [Azure Databricks](https://docs.azuredatabricks.net)
+- 理解 Azure 中的 - [HDInsight](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-overview) 和 [Azure Databricks](https://docs.azuredatabricks.net)
 
 - 常见问题 [PySpark SQL Functions](http://spark.apache.org/docs/latest/api/python/pyspark.sql.html) & [Scala Spark SQL Column Functions](http://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.sql.Column)
 
