@@ -141,7 +141,7 @@ Contoso 公司希望借助物联网解决方或产品案帮助他们更了解来
   - 您的团队需要将数据保存到Azure订阅中，并为其创建一个存储帐户中的容器中。
   - 您的团队应提供一个数据归档解决方案，并提供一个带有数据的Azure Blob存储容器。
   - Azure Blob存储容器中的数据应该按照年、月、日的颗粒度度进行划分存储。
-  - 请参考 [流分析输出：存储、分析选项](https://docs.microsoft.com/zh-cn/azure/iot-hub/iot-hub-csharp-csharp-getstarted) - 通过流分析存储数据
+  - 请参考 [流分析输出：存储、分析选项](https://docs.microsoft.com/zh-cn/azure/stream-analytics/stream-analytics-define-outputs) - 通过流分析存储数据
   - 请参考 [将包含传感器数据的 IoT 中心消息保存到 Azure Blob 存储](https://docs.microsoft.com/zh-cn/azure/iot-hub/iot-hub-store-data-in-azure-table-storage) - 通过设置IoT Hub 节点存储
 
 - **步骤 4 生成报告**
