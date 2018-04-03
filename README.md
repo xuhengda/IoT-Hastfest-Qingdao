@@ -111,8 +111,7 @@ Contoso 公司希望借助物联网解决方或产品案帮助他们更了解来
 }
 ```
 
-  - Events - 注意: 这里有几种事件类型会触发 eventType: RideStart, RideEnd, PhotoTriggered
-  - RideStart 代表车辆驶出， RideEnd代表车辆行驶一圈返回， PhotoTriggered 行驶过程中拍照.
+  - Events - 注意: 这里有几种事件类型会触发 eventType: RideStart, RideEnd, PhotoTriggered 其中 RideStart 代表车辆驶出， RideEnd 代表车辆行驶一圈后返回， PhotoTriggered 行驶过程中拍照.
   
 ``` javascript
 {
@@ -132,8 +131,8 @@ Contoso 公司希望借助物联网解决方或产品案帮助他们更了解来
 
 - **步骤 1 模拟5列云霄飞车数据并且数据上传到 IoT Hub**
   - 修改挑战1中-步骤2 设备上传代码中的JSON格式，并且随机生成5列云霄飞车的数据上传到IoT Hub。
-  - 注意：JSON文件属性中，rideId代表云霄飞车ID（每辆车每次行驶唯一），trainId代表云霄飞车ID（每辆云霄飞车唯一）。
-  - 要求：每一辆云霄飞车行驶一圈时间为1分钟左右 - 前后不相差3秒钟，每次发车间隔时间大改在20秒左右 - 前后不相差5秒。
+  - 注意：JSON文件属性中，rideId代表云霄飞车ID（每辆车每次行驶唯一），trainId代表云霄飞车ID（每辆云霄飞车唯一）。
+  - 要求：每一辆云霄飞车行驶一圈时间为1分钟左右 - 前后不相差3秒钟，每次发车间隔时间大改在20秒左右 - 前后不相差5秒。
 
 - **步骤 2 Stream Processing / 流分析**
   - 当您的数据上传到IoT Hub的时，实际上数据IoT Hub中缓存的，在对应大量数据流入的场景中您可以使用Azure Stream Analytics进行实时数据 分析/导出/抽取 操作，所以在做数据可视化展示之前您需要先将数据从IoT Hub中提取出来。
