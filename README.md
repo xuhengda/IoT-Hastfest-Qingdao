@@ -149,7 +149,7 @@ Contoso 公司希望借助物联网解决方案或产品方案帮助他们更了
 ## 成功标准（挑战步骤）
 
 - **步骤 1 模拟云霄飞车数据并且数据上传到 IoT Hub**
-  - 修改挑战1中-步骤2 设备上传代码中的JSON格式，并且随机生成5辆云霄飞车三个传感器的数据上传到IoT Hub。
+  - 修改挑战1中-步骤2 设备上传代码中的JSON格式，并且随机生成2辆云霄飞车三个传感器的数据上传到IoT Hub。
   - 注意：JSON文件属性中，每辆云霄飞车有唯一标识，为trainID. 云霄飞车每行驶一次即一圈，该次被赋予行驶ID，为rideID.
   - 时间：deviceTime为云霄飞车每次行驶的起始时间, 一定注意时间的格式与当前格式保持一致。
   - 要求：每隔5秒钟上传一次云霄飞车数据，数据需要包含三个传感器的各项数据。假设每辆云霄飞车每次发车间隔时间为10秒钟
@@ -173,8 +173,8 @@ Contoso 公司希望借助物联网解决方案或产品方案帮助他们更了
   - 您的可视化报告必须符合以下条件：
     - 处理输入数据源是动态数据源，而不是blob存储中提供的静态测试数据。
     - 对于每一个云霄飞车，用5分钟为单位进行实时显示。
-    - 可视化报告必须基于消息内的时间戳计算，而不是消息到IoT Hub的时间。 
-  - 您可以参考以下示例
+    - 可视化报告必须基于消息内的时间戳计算，而不是消息到IoT Hub的时间。   
+  - 您可以参考以下示例
     - [使用 Power BI 可视化 Azure IoT 中心的实时传感器数据](https://docs.microsoft.com/zh-cn/azure/iot-hub/iot-hub-live-data-visualization-in-power-bi)
     - [流分析和 Power BI：针对流数据的实时分析仪表板](https://docs.microsoft.com/zh-cn/azure/stream-analytics/stream-analytics-power-bi-dashboard)
 
