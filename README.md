@@ -2,7 +2,7 @@
 
 ## 用户背景
 
-Contoso 公司希望借助物联网解决方或产品案帮助他们更了解来到游乐场客人的数量以及更准确的收集客户行为信息。不过在正式开发部署之前，他们需要做一系列的技术验证来证明解决方案的可行性。在这个验证程序中，通过模拟一个门禁设备（旋转栅门）来记录进入公园的游客数量，来完成对用户流量的跟踪。
+Contoso 公司希望借助物联网解决方案或产品方案帮助他们更了解来到游乐场客人的数量以及更准确的收集客户行为信息。不过在正式开发部署之前，他们需要做一系列的技术验证来证明解决方案的可行性。在这个验证程序中，通过模拟一个门禁设备（旋转栅门）来记录进入公园的游客数量，来完成对用户流量的跟踪。
 
 在您团队中的每一名队员都会模拟成一个公园入口的管理员，这就意味着您团队中的每一位成员都需要负责创建一个模拟的门禁并保证可以正常工作，并且需要在一个客户端程序中可以监控到前端数据流，该解决方案需要支持通过设备唯一标识管理每个设备。在当前课题中我们需要在模拟在每一名游客进入公园的时候会经过旋转门并且我们需要在游客经过旋转门的时候报告一个事件。并且 Contoso 希望所提供的解决方案是可以根据游客的流量或公园扩建后门禁数量和游客的增加进行扩展，目前需要模拟数据在每秒钟报告一位客人经过旋转门。
 
@@ -68,7 +68,7 @@ Contoso 公司希望借助物联网解决方或产品案帮助他们更了解来
 
 ## 用户背景
 
-在成功的完成试点项目以后，Contoso 的IT人员开始了将智能旋转门部署到公园入口。然而，随着云霄飞车在运行过程中多次出现小问题随之成为了人们关注的焦点。据报道，出现了各种异常现象，如照片设备数据故障和列车本身故障。游乐场的管理层认为过山车的口碑对公园至关重要，所以现要求组织所有技术资源都必须收集云霄飞车的数据随后进行分析问题来源。
+在成功的完成试点项目以后，Contoso 的IT人员开始将智能旋转门部署到公园入口。然而，随着云霄飞车在运行过程中多次出现小问题随之成为了人们关注的焦点。据报道，出现了各种异常现象，如照片设备数据故障和列车本身故障。游乐场的管理层认为过山车的口碑对公园至关重要，所以现要求组织所有技术资源都必须收集云霄飞车的数据随后进行分析问题来源。
 
 云霄飞车上已经部署过一些传感器设备可以收集到收集大量数据其中包括，包括速度、加速度、乘客数量以及每次运行的其他关键事件数据。因为目前生成的数据保存在列车本地, Contoso 公司想使用从 IoT Hub 收集上来的数据进行数据的管理分析。
 
@@ -97,7 +97,7 @@ Contoso 公司希望借助物联网解决方或产品案帮助他们更了解来
 }
 ```
 
-  - Accelerometer
+- Accelerometer
   
 ``` javascript
 {
@@ -111,7 +111,8 @@ Contoso 公司希望借助物联网解决方或产品案帮助他们更了解来
 }
 ```
 
-  - Events - 注意: 这里有几种事件类型会触发 eventType: RideStart, RideEnd, PhotoTriggered 其中 RideStart 代表车辆驶出， RideEnd 代表车辆行驶一圈后返回， PhotoTriggered 行驶过程中拍照.
+- Events  
+注意: 这里有三种类型的触发事件：RideStart（飞车启动），RideEnd（飞车终止），PhotoTriggered（行驶过程中拍照）；
   
 ``` javascript
 {
@@ -119,7 +120,25 @@ Contoso 公司希望借助物联网解决方或产品案帮助他们更了解来
     "trainId": "05D8569B-69F9-40C8-B862-E197F9F0331E",
     "correlationId": "BB72B77A-687D-4809-92B0-407EA3633B3C",
     "passengerCount": "30",
+    "eventType": "PhotoTriggered",
+    "deviceTime": "2018-01-17T19:06:08.7490000Z"
+}
+
+{
+    "rideId": "61397CA0-89ED-4F8C-8997-86F32AEEBD2E",
+    "trainId": "05D8569B-69F9-40C8-B862-E197F9F0331E",
+    "correlationId": "BB72B77A-687D-4809-92B0-407EA3633B3C",
+    "passengerCount": "30",
     "eventType": "RideStart",
+    "deviceTime": "2018-01-17T19:06:08.7490000Z"
+}
+
+{
+    "rideId": "61397CA0-89ED-4F8C-8997-86F32AEEBD2E",
+    "trainId": "05D8569B-69F9-40C8-B862-E197F9F0331E",
+    "correlationId": "BB72B77A-687D-4809-92B0-407EA3633B3C",
+    "passengerCount": "30",
+    "eventType": "RideEnd",
     "deviceTime": "2018-01-17T19:06:08.7490000Z"
 }
 ```
@@ -129,13 +148,14 @@ Contoso 公司希望借助物联网解决方或产品案帮助他们更了解来
 
 ## 成功标准（挑战步骤）
 
-- **步骤 1 模拟5列云霄飞车数据并且数据上传到 IoT Hub**
-  - 修改挑战1中-步骤2 设备上传代码中的JSON格式，并且随机生成5列云霄飞车的数据上传到IoT Hub。
+- **步骤 1 模拟云霄飞车数据并且数据上传到 IoT Hub**
+  - 修改挑战1中-步骤2 设备上传代码中的JSON格式，并且随机生成2辆云霄飞车三个传感器的数据上传到IoT Hub。
   - 注意：JSON文件属性中，每辆云霄飞车有唯一标识，为trainID. 云霄飞车每行驶一次即一圈，该次被赋予行驶ID，为rideID.
-  - 要求：每一辆云霄飞车行驶一圈时间为1分钟左右 - 前后不相差3秒钟，每次发车间隔时间大改在20秒左右 - 前后不相差5秒。
+  - 时间：deviceTime为云霄飞车每次行驶的起始时间, 一定注意时间的格式与当前格式保持一致。
+  - 要求：每隔5秒钟上传一次云霄飞车数据，数据需要包含三个传感器的各项数据。假设每辆云霄飞车每次发车间隔时间为10秒钟
 
 - **步骤 2 Stream Processing / 流分析**
-  - 当您的数据上传到IoT Hub的时，实际上数据IoT Hub中缓存的，在对应大量数据流入的场景中您可以使用Azure Stream Analytics进行实时数据 分析/导出/抽取 操作，所以在做数据可视化展示之前您需要先将数据从IoT Hub中提取出来。
+  - 当您的数据上传到IoT Hub的时，实际会在数据IoT Hub中缓存7天，在对应大量数据流入的场景中您可以使用Azure Stream Analytics进行实时数据 分析/导出/抽取 操作，所以在做数据可视化展示之前您需要先将数据从IoT Hub中提取出来。
   - 请参考 [开始使用 Azure 流分析处理来自 IoT 设备的数据](https://docs.microsoft.com/zh-cn/azure/stream-analytics/stream-analytics-get-started-with-azure-stream-analytics-to-process-data-from-iot-devices)
   - 相关案例参考 [使用流分析构建 IoT 解决方案](https://docs.microsoft.com/zh-cn/azure/stream-analytics/stream-analytics-build-an-iot-solution-using-stream-analytics)
 
@@ -147,17 +167,14 @@ Contoso 公司希望借助物联网解决方或产品案帮助他们更了解来
   - 请参考 [将包含传感器数据的 IoT 中心消息保存到 Azure Blob 存储](https://docs.microsoft.com/zh-cn/azure/iot-hub/iot-hub-store-data-in-azure-table-storage) - 通过设置IoT Hub 节点存储
 
 - **步骤 4 生成报告**
-  - 您的团队需要借助 ***Stream Processing / 流分析服务*** 中输出的数据并结合Power BI展示数据内容应该包括以下信息:
-    - 云霄飞车(ride)标识符。
-    - 云霄飞车的启动时间。
-    - 云霄飞车的启动次数。
-    - 乘坐过山车的乘客总数。
-
+  - 您的团队需要借助 ***Stream Processing / 流分析服务*** 中输出的数据并结合Power BI展示数据内容应该包括以下表格:
+    - 实时显示每辆云霄飞车的乘客人数
+    - 统计云霄飞车的拍照次数，从而查看拍照收益  
   - 您的可视化报告必须符合以下条件：
     - 处理输入数据源是动态数据源，而不是blob存储中提供的静态测试数据。
-    - 对于每一个云霄飞车，用5分钟为单位显示发车的次数和乘坐的人数。
-    - 可视化报告必须基于消息内的时间戳计算，而不是消息到IoT Hub的时间。 
-  - 您可以参考以下示例
+    - 对于每一个云霄飞车，用5分钟为单位进行实时显示。
+    - 可视化报告必须基于消息内的时间戳计算，而不是消息到IoT Hub的时间。   
+  - 您可以参考以下示例
     - [使用 Power BI 可视化 Azure IoT 中心的实时传感器数据](https://docs.microsoft.com/zh-cn/azure/iot-hub/iot-hub-live-data-visualization-in-power-bi)
     - [流分析和 Power BI：针对流数据的实时分析仪表板](https://docs.microsoft.com/zh-cn/azure/stream-analytics/stream-analytics-power-bi-dashboard)
 
